@@ -53,10 +53,11 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Problems\!Basic.cs" />
-    <Compile Include="Problems\1672.RichestCustomerWealth.cs" />
-    <Compile Include="Problems\1480.RunningSumof1dArray.cs" />
-    <Compile Include="Problems\2236.RootEqualsSumOfChildren.cs" />
-    <Compile Include="Problems\2235.AddTwoIntegers.cs" />
+    <Compile Include="Problems\412. Fizz Buzz.cs" />
+    <Compile Include="Problems\1672.Richest Customer Wealth.cs" />
+    <Compile Include="Problems\1480.Running Sum of 1d Array.cs" />
+    <Compile Include="Problems\2236.Root Equals Sum Of Children.cs" />
+    <Compile Include="Problems\2235.Add Two Integers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmMain.resx">

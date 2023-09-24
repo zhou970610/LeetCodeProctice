@@ -21,6 +21,7 @@ namespace LeetCode
             lbProblems.Items.Add("2236.Root Equals Sum Of Children");
             lbProblems.Items.Add("1480.Running Sum of 1d Array");
             lbProblems.Items.Add("1672.Richest Customer Wealth");
+            lbProblems.Items.Add("412. Fizz Buzz");
         }
 
         private void btnDo_Click(object sender, EventArgs e)
@@ -57,6 +58,12 @@ namespace LeetCode
 
                 case "1672": //1672.Richest Customer Wealth
                     Problem = new RichestCustomerWealth();
+                    Problem.ShowResult();
+                    Problem = null;
+                    return;
+
+                case "412": //412. Fizz Buzz
+                    Problem = new FizzBuzz();
                     Problem.ShowResult();
                     Problem = null;
                     return;
