@@ -20,6 +20,7 @@ namespace LeetCode
             lbProblems.Items.Add("2235.Add Two Integers");
             lbProblems.Items.Add("2236.Root Equals Sum Of Children");
             lbProblems.Items.Add("1480.Running Sum of 1d Array");
+            lbProblems.Items.Add("1672.Richest Customer Wealth");
         }
 
         private void btnDo_Click(object sender, EventArgs e)
@@ -36,20 +37,26 @@ namespace LeetCode
 
             switch (SelectedProblem[0])
             {
-                case "2235": //Add Two Integers
+                case "2235": //2235.Add Two Integers
                     Problem = new AddTwoIntegers();
                     Problem.ShowResult();
                     Problem = null;
                     return;
 
-                case "2236": //Root Equals Sum Of Children
+                case "2236": //2236.Root Equals Sum Of Children
                     Problem = new RootEqualsSumOfChildren();
                     Problem.ShowResult();
                     Problem = null;
                     return;
 
-                case "1480": //Running Sum of 1d Array
+                case "1480": //1480.Running Sum of 1d Array
                     Problem = new RunningSumof1dArray();
+                    Problem.ShowResult();
+                    Problem = null;
+                    return;
+
+                case "1672": //1672.Richest Customer Wealth
+                    Problem = new RichestCustomerWealth();
                     Problem.ShowResult();
                     Problem = null;
                     return;
