@@ -53,6 +53,7 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Problems\!Basic.cs" />
+    <Compile Include="Problems\2236.RootEqualsSumOfChildren.cs" />
     <Compile Include="Problems\2235.AddTwoIntegers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

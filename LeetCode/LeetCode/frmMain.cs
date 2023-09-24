@@ -16,6 +16,9 @@ namespace LeetCode
         public frmMain()
         {
             InitializeComponent();
+            lbProblems.Items.Clear();
+            lbProblems.Items.Add("2235.Add Two Integers");
+            lbProblems.Items.Add("2236.Root Equals Sum Of Children");
         }
 
         private void btnDo_Click(object sender, EventArgs e)
@@ -27,11 +30,19 @@ namespace LeetCode
             }
 
             string[] SelectedProblem = lbProblems.SelectedItem.ToString().Split('.');
+            
+            Basic Problem = new Basic();
 
             switch (SelectedProblem[0])
             {
                 case "2235": //Add Two Integers
-                    AddTwoIntegers Problem = new AddTwoIntegers();
+                    Problem = new AddTwoIntegers();
+                    Problem.ShowResult();
+                    Problem = null;
+                    return;
+
+                case "2236": //Root Equals Sum Of Children
+                    Problem = new RootEqualsSumOfChildren();
                     Problem.ShowResult();
                     Problem = null;
                     return;
