@@ -22,6 +22,7 @@ namespace LeetCode
             lbProblems.Items.Add("1480.Running Sum of 1d Array");
             lbProblems.Items.Add("1672.Richest Customer Wealth");
             lbProblems.Items.Add("412. Fizz Buzz");
+            lbProblems.Items.Add("1342. Number of Steps to Reduce a Number to Zero");
         }
 
         private void btnDo_Click(object sender, EventArgs e)
@@ -64,6 +65,12 @@ namespace LeetCode
 
                 case "412": //412. Fizz Buzz
                     Problem = new FizzBuzz();
+                    Problem.ShowResult();
+                    Problem = null;
+                    return;
+
+                case "1342": //1342. Number of Steps to Reduce a Number to Zero
+                    Problem = new NumberofStepstoReduceaNumbertoZero();
                     Problem.ShowResult();
                     Problem = null;
                     return;

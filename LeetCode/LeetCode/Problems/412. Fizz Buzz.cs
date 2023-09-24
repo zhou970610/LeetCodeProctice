@@ -52,22 +52,22 @@ namespace LeetCode.Problems
                     Result.Add(tmp);
 
                     //Testcase 254ms, Accepted 119ms, 57.4MB
-                    //if (index % 15 == 0)
-                    //{
-                    //    Result.Add("FizzBuzz");
-                    //}
-                    //else if(index % 3 == 0)
-                    //{
-                    //    Result.Add("Fizz");
-                    //}
-                    //else if (index % 5 == 0)
-                    //{
-                    //    Result.Add("Buzz"); 
-                    //}
-                    //else
-                    //{
-                    //    Result.Add(index.ToString());
-                    //}
+                    if (index % 15 == 0)
+                    {
+                        Result.Add("FizzBuzz");
+                    }
+                    else if(index % 3 == 0)
+                    {
+                        Result.Add("Fizz");
+                    }
+                    else if (index % 5 == 0)
+                    {
+                        Result.Add("Buzz"); 
+                    }
+                    else
+                    {
+                        Result.Add(index.ToString());
+                    }
                 }
                 return Result;
             }

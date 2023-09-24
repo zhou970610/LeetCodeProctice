@@ -53,6 +53,7 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Problems\!Basic.cs" />
+    <Compile Include="Problems\1342. Number of Steps to Reduce a Number to Zero.cs" />
     <Compile Include="Problems\412. Fizz Buzz.cs" />
     <Compile Include="Problems\1672.Richest Customer Wealth.cs" />
     <Compile Include="Problems\1480.Running Sum of 1d Array.cs" />
