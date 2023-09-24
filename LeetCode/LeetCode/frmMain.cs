@@ -19,6 +19,7 @@ namespace LeetCode
             lbProblems.Items.Clear();
             lbProblems.Items.Add("2235.Add Two Integers");
             lbProblems.Items.Add("2236.Root Equals Sum Of Children");
+            lbProblems.Items.Add("1480.Running Sum of 1d Array");
         }
 
         private void btnDo_Click(object sender, EventArgs e)
@@ -43,6 +44,12 @@ namespace LeetCode
 
                 case "2236": //Root Equals Sum Of Children
                     Problem = new RootEqualsSumOfChildren();
+                    Problem.ShowResult();
+                    Problem = null;
+                    return;
+
+                case "1480": //Running Sum of 1d Array
+                    Problem = new RunningSumof1dArray();
                     Problem.ShowResult();
                     Problem = null;
                     return;
