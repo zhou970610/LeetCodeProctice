@@ -23,6 +23,8 @@ namespace LeetCode
             lbProblems.Items.Add("1672.Richest Customer Wealth");
             lbProblems.Items.Add("412. Fizz Buzz");
             lbProblems.Items.Add("1342. Number of Steps to Reduce a Number to Zero");
+            lbProblems.Items.Add("876. Middle of the Linked List");
+            lbProblems.Items.Add("383. Ransom Note");
         }
 
         private void btnDo_Click(object sender, EventArgs e)
@@ -71,6 +73,18 @@ namespace LeetCode
 
                 case "1342": //1342. Number of Steps to Reduce a Number to Zero
                     Problem = new NumberofStepstoReduceaNumbertoZero();
+                    Problem.ShowResult();
+                    Problem = null;
+                    return;
+
+                case "876": //876. Middle of the Linked List
+                    Problem = new MiddleNode();
+                    Problem.ShowResult();
+                    Problem = null;
+                    return;
+
+                case "383": //383. Ransom Note
+                    Problem = new RansomNote();
                     Problem.ShowResult();
                     Problem = null;
                     return;
