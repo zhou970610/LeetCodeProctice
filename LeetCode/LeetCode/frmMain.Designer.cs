@@ -39,10 +39,8 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbProblems.FormattingEnabled = true;
             this.lbProblems.ItemHeight = 16;
-            this.lbProblems.Items.AddRange(new object[] {
-            "2235.Add Two Integers"});
             this.lbProblems.Location = new System.Drawing.Point(18, 32);
-            this.lbProblems.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbProblems.Margin = new System.Windows.Forms.Padding(4);
             this.lbProblems.Name = "lbProblems";
             this.lbProblems.Size = new System.Drawing.Size(318, 548);
             this.lbProblems.Sorted = true;
@@ -76,8 +74,8 @@
             this.Controls.Add(this.btnDo);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lbProblems);
-            this.Font = new System.Drawing.Font("新細明體", 12F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Font = new System.Drawing.Font("PMingLiU", 12F);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
             this.Text = "Form1";
             this.ResumeLayout(false);

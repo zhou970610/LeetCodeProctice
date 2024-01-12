@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,15 +17,25 @@ namespace LeetCode
         public frmMain()
         {
             InitializeComponent();
-            lbProblems.Items.Clear();
-            lbProblems.Items.Add("2235.Add Two Integers");
-            lbProblems.Items.Add("2236.Root Equals Sum Of Children");
-            lbProblems.Items.Add("1480.Running Sum of 1d Array");
-            lbProblems.Items.Add("1672.Richest Customer Wealth");
-            lbProblems.Items.Add("412. Fizz Buzz");
-            lbProblems.Items.Add("1342. Number of Steps to Reduce a Number to Zero");
-            lbProblems.Items.Add("876. Middle of the Linked List");
-            lbProblems.Items.Add("383. Ransom Note");
+            //lbProblems.Items.Clear();
+
+            ////Read File Names
+            DirectoryInfo slnDir = GetSLNDirectory();
+            DirectoryInfo CodeDir = new DirectoryInfo(System.IO.Path.Combine(slnDir.FullName, "LeetCode", "Problems"));
+            foreach (FileInfo f in CodeDir.GetFiles())
+            {
+                lbProblems.Items.Add(f.Name);
+            }
+        }
+
+        private DirectoryInfo GetSLNDirectory()
+        {
+            DirectoryInfo FindDir = new DirectoryInfo(Environment.CurrentDirectory);
+            while (!FindDir.GetFiles( "*.sln").Any())
+            {
+                FindDir = FindDir.Parent;
+            }
+            return FindDir;
         }
 
         private void btnDo_Click(object sender, EventArgs e)
@@ -44,52 +55,50 @@ namespace LeetCode
                 case "2235": //2235.Add Two Integers
                     Problem = new AddTwoIntegers();
                     Problem.ShowResult();
-                    Problem = null;
-                    return;
+                    break;
 
                 case "2236": //2236.Root Equals Sum Of Children
                     Problem = new RootEqualsSumOfChildren();
                     Problem.ShowResult();
-                    Problem = null;
-                    return;
+                    break;
 
                 case "1480": //1480.Running Sum of 1d Array
                     Problem = new RunningSumof1dArray();
                     Problem.ShowResult();
-                    Problem = null;
-                    return;
+                    break;
 
                 case "1672": //1672.Richest Customer Wealth
                     Problem = new RichestCustomerWealth();
                     Problem.ShowResult();
-                    Problem = null;
-                    return;
+                    break;
 
                 case "412": //412. Fizz Buzz
                     Problem = new FizzBuzz();
                     Problem.ShowResult();
-                    Problem = null;
-                    return;
+                    break;
 
                 case "1342": //1342. Number of Steps to Reduce a Number to Zero
                     Problem = new NumberofStepstoReduceaNumbertoZero();
                     Problem.ShowResult();
-                    Problem = null;
-                    return;
+                    break;
 
                 case "876": //876. Middle of the Linked List
                     Problem = new MiddleNode();
                     Problem.ShowResult();
-                    Problem = null;
-                    return;
+                    break;
 
                 case "383": //383. Ransom Note
                     Problem = new RansomNote();
                     Problem.ShowResult();
-                    Problem = null;
-                    return;
+                    break;
+                    
+                case "Arrays101": //Arrays101. ALL
+                    Problem = new Arrays101();
+                    Problem.ShowResult();
+                    break;
 
             }
+            return;
         }
     }
 }

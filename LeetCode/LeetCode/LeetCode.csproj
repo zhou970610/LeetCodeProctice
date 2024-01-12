@@ -57,6 +57,7 @@
     <Compile Include="Problems\!Basic.cs" />
     <Compile Include="Problems\1342. Number of Steps to Reduce a Number to Zero.cs" />
     <Compile Include="Problems\383. Ransom Note.cs" />
+    <Compile Include="Problems\Arrays101. ALL.cs" />
     <Compile Include="Problems\876. Middle of the Linked List.cs" />
     <Compile Include="Problems\412. Fizz Buzz.cs" />
     <Compile Include="Problems\1672.Richest Customer Wealth.cs" />
@@ -77,6 +78,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\LeetCode.Problems.AddTwoIntegers+Solution.datasource" />
+    <None Include="Properties\DataSources\LeetCode.Problems.AddTwoIntegers.datasource" />
+    <None Include="Properties\DataSources\LeetCode.Problems.Basic.datasource" />
+    <None Include="Properties\DataSources\LeetCode.Problems.FizzBuzz+Solution.datasource" />
+    <None Include="Properties\DataSources\LeetCode.Problems.FizzBuzz.datasource" />
+    <None Include="Properties\DataSources\LeetCode.Problems.MaxConsecutiveOnes+ListNode.datasource" />
+    <None Include="Properties\DataSources\LeetCode.Problems.MaxConsecutiveOnes+Solution.datasource" />
+    <None Include="Properties\DataSources\LeetCode.Problems.MaxConsecutiveOnes.datasource" />
+    <None Include="Properties\DataSources\LeetCode.Problems.MiddleNode+ListNode.datasource" />
+    <None Include="Properties\DataSources\LeetCode.Problems.MiddleNode+Solution.datasource" />
+    <None Include="Properties\DataSources\LeetCode.Problems.MiddleNode.datasource" />
+    <None Include="Properties\DataSources\LeetCode.Problems.NumberofStepstoReduceaNumbertoZero+Solution.datasource" />
+    <None Include="Properties\DataSources\LeetCode.Problems.NumberofStepstoReduceaNumbertoZero.datasource" />
+    <None Include="Properties\DataSources\LeetCode.Problems.RansomNote+Solution.datasource" />
+    <None Include="Properties\DataSources\LeetCode.Problems.RansomNote.datasource" />
+    <None Include="Properties\DataSources\LeetCode.Problems.RichestCustomerWealth+Solution.datasource" />
+    <None Include="Properties\DataSources\LeetCode.Problems.RichestCustomerWealth.datasource" />
+    <None Include="Properties\DataSources\LeetCode.Problems.RootEqualsSumOfChildren+Solution.datasource" />
+    <None Include="Properties\DataSources\LeetCode.Problems.RootEqualsSumOfChildren+TreeNode.datasource" />
+    <None Include="Properties\DataSources\LeetCode.Problems.RootEqualsSumOfChildren.datasource" />
+    <None Include="Properties\DataSources\LeetCode.Problems.RunningSumof1dArray+Solution.datasource" />
+    <None Include="Properties\DataSources\LeetCode.Problems.RunningSumof1dArray.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
