@@ -43,19 +43,50 @@ namespace LeetCode.Problems
             // Problem.DuplicateZeros(Title);
             //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Title), "DuplicateZeros");
 
-            //Merge
-            int[] Title = new int[6] { 1, 2, 3, 0, 0, 0 };
-            int[] Title2 = new int[3] { 2, 5, 6 };
-            Problem.Merge(Title, 3, Title2, 3);
-            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Title), "Merge");
-            Title = new int[1] { 1 };
-            Title2 = new int[0] { };
-            Problem.Merge(Title, 1, Title2, 0);
-            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Title), "Merge");
-            Title = new int[1] { 0 };
-            Title2 = new int[1] { 1 };
-            Problem.Merge(Title, 0, Title2, 1);
-            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Title), "Merge");
+            ////Merge
+            //int[] Title = new int[6] { 1, 2, 3, 0, 0, 0 };
+            //int[] Title2 = new int[3] { 2, 5, 6 };
+            //Problem.Merge(Title, 3, Title2, 3);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Title), "Merge");
+            //Title = new int[1] { 1 };
+            //Title2 = new int[0] { };
+            //Problem.Merge(Title, 1, Title2, 0);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Title), "Merge");
+            //Title = new int[1] { 0 };
+            //Title2 = new int[1] { 1 };
+            //Problem.Merge(Title, 0, Title2, 1);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Title), "Merge");
+
+            ////RemoveElement
+            //int[] Title = new int[4] { 3, 2, 2, 3 };
+            //int Result = Problem.RemoveElement(Title, 3);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "RemoveElement");
+            //Title = new int[8] { 0, 1, 2, 2, 3, 0, 4, 2 };
+            //Result = Problem.RemoveElement(Title, 2);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "RemoveElement");
+            //Title = new int[12] { 0, 1, 2, 2, 3, 0, 4, 2, 3, 2, 2, 3 };
+            //Result = Problem.RemoveElement(Title, 0);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "RemoveElement");
+            //Title = new int[0] {  };
+            //Result = Problem.RemoveElement(Title, 0);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "RemoveElement");
+            //Title = new int[2] {  3,3};
+            //Result = Problem.RemoveElement(Title,5);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "RemoveElement");
+
+            //RemoveDuplicates
+            int[] Title = new int[4] {  2, 2, 3, 3 };
+            int Result = Problem.RemoveDuplicates(Title);
+            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "RemoveDuplicates");
+            Title = new int[8] { 0, 0, 1, 2, 2, 2, 3,  4 };
+            Result = Problem.RemoveDuplicates(Title);
+            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "RemoveDuplicates");
+            Title = new int[12] { 0,  0, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4 };
+            Result = Problem.RemoveDuplicates(Title);
+            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "RemoveDuplicates");
+            Title = new int[1] { 2 };
+            Result = Problem.RemoveDuplicates(Title);
+            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "RemoveDuplicates");
         }
 
         public class Solution
@@ -165,7 +196,7 @@ namespace LeetCode.Problems
                         nums1[i] = nums2[index_2];
                         index_2++;
                     }
-                    else if (index_2==nums2.Length)
+                    else if (index_2 == nums2.Length)
                     {
                         nums1[i] = tmp[index_tmp];
                         index_tmp++;
@@ -182,6 +213,66 @@ namespace LeetCode.Problems
                     }
                 }
 
+            }
+            public int RemoveElement(int[] nums, int val)
+            {
+                ////By My Own
+                //if(nums.Length == 0) return 0;
+                //if(nums.Length == 1) {
+                //    if (nums[0] == val)
+                //    {
+                //        nums=new int[nums.Length-1];
+                //        return 0;
+                //    }
+                //    else
+                //    {
+                //        return 1;
+                //    }
+                //}
+
+                //Array.Sort(nums, new 陣列數字一樣丟後面(val));
+                //int Result = Array.IndexOf(nums, val);
+                //return Result==-1?nums.Length:Result;
+
+                //By Internet
+                int count = 0;
+                for(int i=0;i<nums.Length; i++)
+                {
+                    if (nums[i] != val)
+                    {
+                        nums[count++] = nums[i];
+                    }
+                }
+                return count; 
+            }
+            public int RemoveDuplicates(int[] nums)
+            {
+                int count = 1;
+                for (int i = 1; i < nums.Length; i++)
+                {
+                    if (nums[i] != nums[i-1])
+                    {
+                        nums[count++] = nums[i];
+                    }
+                }
+                return count;
+            }
+            private class 陣列數字一樣丟後面 : IComparer<int>
+            {
+                private int k;
+                public 陣列數字一樣丟後面(int inputK)
+                {
+                    k = inputK;
+                }
+                public int Compare(int x, int y)
+                {
+                    //return 1 means x>y
+                    //return 0 means x==y
+                    //return -1 means x<y
+                    if (x==k ) return 1;
+                    if(y==k) return -1;
+                    return 0;
+                }
             }
             public string ResultToString(int Result)
             {
