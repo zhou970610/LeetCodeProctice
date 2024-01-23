@@ -74,19 +74,33 @@ namespace LeetCode.Problems
             //Result = Problem.RemoveElement(Title,5);
             //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "RemoveElement");
 
-            //RemoveDuplicates
-            int[] Title = new int[4] {  2, 2, 3, 3 };
-            int Result = Problem.RemoveDuplicates(Title);
-            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "RemoveDuplicates");
-            Title = new int[8] { 0, 0, 1, 2, 2, 2, 3,  4 };
-            Result = Problem.RemoveDuplicates(Title);
-            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "RemoveDuplicates");
-            Title = new int[12] { 0,  0, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4 };
-            Result = Problem.RemoveDuplicates(Title);
-            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "RemoveDuplicates");
+            ////RemoveDuplicates
+            //int[] Title = new int[4] {  2, 2, 3, 3 };
+            //int Result = Problem.RemoveDuplicates(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "RemoveDuplicates");
+            //Title = new int[8] { 0, 0, 1, 2, 2, 2, 3,  4 };
+            //Result = Problem.RemoveDuplicates(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "RemoveDuplicates");
+            //Title = new int[12] { 0,  0, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4 };
+            //Result = Problem.RemoveDuplicates(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "RemoveDuplicates");
+            //Title = new int[1] { 2 };
+            //Result = Problem.RemoveDuplicates(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "RemoveDuplicates");
+
+            //CheckIfExist
+            int[] Title = new int[4] { 10, 2, 5, 3 };
+            bool Result = Problem.CheckIfExist(Title);
+            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "CheckIfExist");
+            Title = new int[4] { 3, 1, 7, 11 };
+            Result = Problem.CheckIfExist(Title);
+            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "CheckIfExist");
+            Title = new int[12] { 3, 1, 7, 11, 10, 2, 5, 3, 53, 23, 43, 14 };
+            Result = Problem.CheckIfExist(Title);
+            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "CheckIfExist");
             Title = new int[1] { 2 };
-            Result = Problem.RemoveDuplicates(Title);
-            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "RemoveDuplicates");
+            Result = Problem.CheckIfExist(Title);
+            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "CheckIfExist");
         }
 
         public class Solution
@@ -236,26 +250,38 @@ namespace LeetCode.Problems
 
                 //By Internet
                 int count = 0;
-                for(int i=0;i<nums.Length; i++)
+                for (int i = 0; i < nums.Length; i++)
                 {
                     if (nums[i] != val)
                     {
                         nums[count++] = nums[i];
                     }
                 }
-                return count; 
+                return count;
             }
             public int RemoveDuplicates(int[] nums)
             {
                 int count = 1;
                 for (int i = 1; i < nums.Length; i++)
                 {
-                    if (nums[i] != nums[i-1])
+                    if (nums[i] != nums[i - 1])
                     {
                         nums[count++] = nums[i];
                     }
                 }
                 return count;
+            }
+            public bool CheckIfExist(int[] arr)
+            {
+                for(int i = 0; i < arr.Length; i++)
+                {
+                    for(int j = i+1; j < arr.Length; j++)
+                    {
+                        if (arr[i] == 2 * arr[j]) return true;
+                        if (arr[j] == 2 * arr[i]) return true;
+                    }
+                }
+                return false;
             }
             private class 陣列數字一樣丟後面 : IComparer<int>
             {
@@ -269,12 +295,12 @@ namespace LeetCode.Problems
                     //return 1 means x>y
                     //return 0 means x==y
                     //return -1 means x<y
-                    if (x==k ) return 1;
-                    if(y==k) return -1;
+                    if (x == k) return 1;
+                    if (y == k) return -1;
                     return 0;
                 }
             }
-            public string ResultToString(int Result)
+            public string ResultToString(object Result)
             {
                 return Result.ToString();
             }
