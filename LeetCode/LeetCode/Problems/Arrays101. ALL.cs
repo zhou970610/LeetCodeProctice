@@ -88,19 +88,61 @@ namespace LeetCode.Problems
             //Result = Problem.RemoveDuplicates(Title);
             //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "RemoveDuplicates");
 
-            //CheckIfExist
-            int[] Title = new int[4] { 10, 2, 5, 3 };
-            bool Result = Problem.CheckIfExist(Title);
-            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "CheckIfExist");
-            Title = new int[4] { 3, 1, 7, 11 };
-            Result = Problem.CheckIfExist(Title);
-            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "CheckIfExist");
-            Title = new int[12] { 3, 1, 7, 11, 10, 2, 5, 3, 53, 23, 43, 14 };
-            Result = Problem.CheckIfExist(Title);
-            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "CheckIfExist");
-            Title = new int[1] { 2 };
-            Result = Problem.CheckIfExist(Title);
-            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "CheckIfExist");
+            ////CheckIfExist
+            //int[] Title = new int[4] { 10, 2, 5, 3 };
+            //bool Result = Problem.CheckIfExist(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "CheckIfExist");
+            //Title = new int[4] { 3, 1, 7, 11 };
+            //Result = Problem.CheckIfExist(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "CheckIfExist");
+            //Title = new int[12] { 3, 1, 7, 11, 10, 2, 5, 3, 53, 23, 43, 14 };
+            //Result = Problem.CheckIfExist(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "CheckIfExist");
+            //Title = new int[1] { 2 };
+            //Result = Problem.CheckIfExist(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "CheckIfExist");
+
+            ////ValidMountainArray
+            //int[] Title = new int[4] { 10, 2, 5, 3 };
+            //bool Result = Problem.ValidMountainArray(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "ValidMountainArray");
+            //Title = new int[4] { 0,3,2,1};
+            //Result = Problem.ValidMountainArray(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "ValidMountainArray");
+            //Title = new int[3] { 3, 5,5 };
+            //Result = Problem.ValidMountainArray(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "ValidMountainArray");
+            //Title = new int[2] { 2,1 };
+            //Result = Problem.ValidMountainArray(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "ValidMountainArray");
+
+            ////ReplaceElements
+            //int[] Title = new int[6] { 17, 18, 5, 4, 6, 1 };
+            //int[] Result = Problem.ReplaceElements(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "ReplaceElements");
+            //Title = new int[1] { 400 };
+            //Result = Problem.ReplaceElements(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "ReplaceElements");
+            //Title = new int[3] { 3, 5,5 };
+            //Result = Problem.ReplaceElements(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "ReplaceElements");
+            //Title = new int[2] { 2,1 };
+            //Result = Problem.ReplaceElements(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "ReplaceElements");
+
+            //MoveZeroes
+            int[] Title = new int[5] { 0, 1, 0, 3, 12 };
+             Problem.MoveZeroes(Title);
+            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Title), "MoveZeroes");
+            Title = new int[1] { 400 };
+             Problem.MoveZeroes(Title);
+            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Title), "MoveZeroes");
+            Title = new int[3] { 3, 5,5 };
+             Problem.MoveZeroes(Title);
+            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Title), "MoveZeroes");
+            Title = new int[2] { 2,1 };
+             Problem.MoveZeroes(Title);
+            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Title), "MoveZeroes");
         }
 
         public class Solution
@@ -282,6 +324,83 @@ namespace LeetCode.Problems
                     }
                 }
                 return false;
+            }
+            public bool ValidMountainArray(int[] arr)
+            {
+                if (arr.Length < 3) return false;
+                if (arr[0] >= arr[1])
+                {
+                    return false;
+                }
+                bool Increase = true;
+                for (int i = 2; i < arr.Length; i++)
+                {
+                    if (arr[i - 1] == arr[i]) return false;
+                    if (arr[i - 1] > arr[i] && Increase)
+                    {
+                        Increase = false;
+                        continue;
+                    }
+                    if (arr[i - 1] < arr[i] && !Increase) return false;
+
+                }
+                
+                return !Increase;
+            }
+            public int[] ReplaceElements(int[] arr)
+            {
+                if (arr.Length < 2)
+                {
+                    arr[0] = -1;
+                }
+                else
+                {
+                    int max = -1;
+                    for(int i = arr.Length - 1; i >= 0; i--)
+                    {
+                        if (max > arr[i])
+                        {
+                            arr[i] = max;
+                        }
+                        else
+                        {
+                            int t = arr[i ];
+                            arr[i ] = max;
+                            max = t;
+                        }
+                    }
+                }
+                return arr;
+            }
+            public void MoveZeroes(int[] nums)
+            {
+
+                //for(int i = 0; i < nums.Length; i++)
+                //{
+                //    if (nums[i] == 0)
+                //    {
+                //        for(int j = i + 1; j < nums.Length; j++)
+                //        {
+                //            if (nums[j] == 0) continue;
+                //            int tmp = nums[i];
+                //            nums[i] = nums[j];
+                //            nums[j] = tmp;
+                //            break;
+                //        }
+                //    }
+                //}
+
+                int zeroIndex = 0;
+                for(int i=0;i<nums.Length; i++)
+                {
+                    if (nums[zeroIndex] != 0) zeroIndex++;
+                    if (nums[i]!=0 && i>zeroIndex)
+                    {
+                        nums[zeroIndex] =nums[i];
+                        nums[i] = 0;
+                        zeroIndex++;
+                    }
+                }
             }
             private class 陣列數字一樣丟後面 : IComparer<int>
             {
