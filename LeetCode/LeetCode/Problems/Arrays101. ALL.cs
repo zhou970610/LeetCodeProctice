@@ -188,16 +188,16 @@ namespace LeetCode.Problems
             //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "ThirdMax");
 
             //FindDisappearedNumbers
-            int[] Title = new int[3] { 3, 2, 1 };
+            int[] Title = new int[8] { 4, 3, 2, 7, 8, 2, 3, 1 };
             IList<int> Result = Problem.FindDisappearedNumbers(Title);
             System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "FindDisappearedNumbers");
-            Title = new int[2] { 1, 2 };
+            Title = new int[2] { 1, 1 };
             Result = Problem.FindDisappearedNumbers(Title);
             System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "FindDisappearedNumbers");
             Title = new int[4] { 2, 2, 3, 1 };
             Result = Problem.FindDisappearedNumbers(Title);
             System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "FindDisappearedNumbers");
-            Title = new int[3] { 1 ,1,2};
+            Title = new int[1] { 1 };
             Result = Problem.FindDisappearedNumbers(Title);
             System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "FindDisappearedNumbers");
         }
@@ -516,7 +516,7 @@ namespace LeetCode.Problems
                 long[] Max_3 = new long[3] { long.MinValue, long.MinValue, long.MinValue };
                 for (int i = 0; i < nums.Length; i++)
                 {
-                    for(int j = 0; j < Max_3.Length; j++)
+                    for (int j = 0; j < Max_3.Length; j++)
                     {
                         if (nums[i] > Max_3[j])
                         {
@@ -533,13 +533,24 @@ namespace LeetCode.Problems
                 }
                 if (Max_count < 3)
                 {
-                    return (int) Max_3[0];
+                    return (int)Max_3[0];
                 }
                 return (int)Max_3[2];
             }
             public IList<int> FindDisappearedNumbers(int[] nums)
             {
+                List<int> result = new List<int>();
+                for (int i = 0; i < nums.Length; i++)
+                {
+                    result.Add(i + 1);
+                }
 
+                for (int i = 0; i < nums.Length; i++)
+                {
+                    result.Remove(nums[i]);
+                }
+
+                return result;
             }
             private class 陣列數字一樣丟後面 : IComparer<int>
             {
@@ -570,7 +581,25 @@ namespace LeetCode.Problems
                     ResultStr += Result[i].ToString();
                     ResultStr += ",";
                 }
-                ResultStr = ResultStr.Remove(ResultStr.LastIndexOf(','));
+                if (Result.Length >= 2)
+                {
+                    ResultStr = ResultStr.Remove(ResultStr.LastIndexOf(','));
+                }
+                ResultStr += "]";
+                return ResultStr;
+            }
+            public string ResultToString(IList<int> Result)
+            {
+                string ResultStr = "[";
+                for (int i = 0; i < Result.Count; i++)
+                {
+                    ResultStr += Result[i].ToString();
+                    ResultStr += ",";
+                }
+                if (Result.Count >= 1)
+                {
+                    ResultStr = ResultStr.Remove(ResultStr.LastIndexOf(','));
+                }
                 ResultStr += "]";
                 return ResultStr;
             }
