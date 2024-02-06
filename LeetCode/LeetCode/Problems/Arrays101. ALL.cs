@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -130,19 +131,75 @@ namespace LeetCode.Problems
             //Result = Problem.ReplaceElements(Title);
             //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "ReplaceElements");
 
-            //MoveZeroes
-            int[] Title = new int[5] { 0, 1, 0, 3, 12 };
-             Problem.MoveZeroes(Title);
-            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Title), "MoveZeroes");
-            Title = new int[1] { 400 };
-             Problem.MoveZeroes(Title);
-            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Title), "MoveZeroes");
-            Title = new int[3] { 3, 5,5 };
-             Problem.MoveZeroes(Title);
-            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Title), "MoveZeroes");
-            Title = new int[2] { 2,1 };
-             Problem.MoveZeroes(Title);
-            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Title), "MoveZeroes");
+            ////MoveZeroes
+            //int[] Title = new int[5] { 0, 1, 0, 3, 12 };
+            // Problem.MoveZeroes(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Title), "MoveZeroes");
+            //Title = new int[1] { 400 };
+            // Problem.MoveZeroes(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Title), "MoveZeroes");
+            //Title = new int[3] { 3, 5,5 };
+            // Problem.MoveZeroes(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Title), "MoveZeroes");
+            //Title = new int[2] { 2,1 };
+            // Problem.MoveZeroes(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Title), "MoveZeroes");
+
+            ////SortArrayByParity
+            //int[] Title = new int[5] { 0, 1, 0, 3, 12 };
+            //int[] Result = Problem.SortArrayByParity(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "SortArrayByParity");
+            //Title = new int[4] { 3, 1, 2, 4 };
+            //Result = Problem.SortArrayByParity(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "SortArrayByParity");
+            //Title = new int[3] { 3, 5, 5 };
+            //Result = Problem.SortArrayByParity(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "SortArrayByParity");
+            //Title = new int[1] { 0 };
+            //Result = Problem.SortArrayByParity(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "SortArrayByParity");
+
+            ////HeightChecker
+            //int[] Title = new int[6] { 1, 1, 4, 2, 1, 3 };
+            //int Result = Problem.HeightChecker(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "HeightChecker");
+            //Title = new int[5] { 5, 1, 2, 3, 4 };
+            //Result = Problem.HeightChecker(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "HeightChecker");
+            //Title = new int[5] { 1, 2, 3, 4, 5 };
+            //Result = Problem.HeightChecker(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "HeightChecker");
+            //Title = new int[1] { 1 };
+            //Result = Problem.HeightChecker(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "HeightChecker");
+
+            ////ThirdMax
+            //int[] Title = new int[3] { 3, 2, 1 };
+            //int Result = Problem.ThirdMax(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "ThirdMax");
+            //Title = new int[2] { 1, 2 };
+            //Result = Problem.ThirdMax(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "ThirdMax");
+            //Title = new int[4] { 2, 2, 3, 1 };
+            //Result = Problem.ThirdMax(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "ThirdMax");
+            //Title = new int[3] { 1 ,1,2};
+            //Result = Problem.ThirdMax(Title);
+            //System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "ThirdMax");
+
+            //FindDisappearedNumbers
+            int[] Title = new int[3] { 3, 2, 1 };
+            IList<int> Result = Problem.FindDisappearedNumbers(Title);
+            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "FindDisappearedNumbers");
+            Title = new int[2] { 1, 2 };
+            Result = Problem.FindDisappearedNumbers(Title);
+            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "FindDisappearedNumbers");
+            Title = new int[4] { 2, 2, 3, 1 };
+            Result = Problem.FindDisappearedNumbers(Title);
+            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "FindDisappearedNumbers");
+            Title = new int[3] { 1 ,1,2};
+            Result = Problem.FindDisappearedNumbers(Title);
+            System.Windows.Forms.MessageBox.Show(Problem.ResultToString(Result), "FindDisappearedNumbers");
         }
 
         public class Solution
@@ -315,9 +372,9 @@ namespace LeetCode.Problems
             }
             public bool CheckIfExist(int[] arr)
             {
-                for(int i = 0; i < arr.Length; i++)
+                for (int i = 0; i < arr.Length; i++)
                 {
-                    for(int j = i+1; j < arr.Length; j++)
+                    for (int j = i + 1; j < arr.Length; j++)
                     {
                         if (arr[i] == 2 * arr[j]) return true;
                         if (arr[j] == 2 * arr[i]) return true;
@@ -344,7 +401,7 @@ namespace LeetCode.Problems
                     if (arr[i - 1] < arr[i] && !Increase) return false;
 
                 }
-                
+
                 return !Increase;
             }
             public int[] ReplaceElements(int[] arr)
@@ -356,7 +413,7 @@ namespace LeetCode.Problems
                 else
                 {
                     int max = -1;
-                    for(int i = arr.Length - 1; i >= 0; i--)
+                    for (int i = arr.Length - 1; i >= 0; i--)
                     {
                         if (max > arr[i])
                         {
@@ -364,8 +421,8 @@ namespace LeetCode.Problems
                         }
                         else
                         {
-                            int t = arr[i ];
-                            arr[i ] = max;
+                            int t = arr[i];
+                            arr[i] = max;
                             max = t;
                         }
                     }
@@ -391,16 +448,98 @@ namespace LeetCode.Problems
                 //}
 
                 int zeroIndex = 0;
-                for(int i=0;i<nums.Length; i++)
+                for (int i = 0; i < nums.Length; i++)
                 {
                     if (nums[zeroIndex] != 0) zeroIndex++;
-                    if (nums[i]!=0 && i>zeroIndex)
+                    if (nums[i] != 0 && i > zeroIndex)
                     {
-                        nums[zeroIndex] =nums[i];
+                        nums[zeroIndex] = nums[i];
                         nums[i] = 0;
                         zeroIndex++;
                     }
                 }
+            }
+            public int[] SortArrayByParity(int[] nums)
+            {
+                int evenIndex = 0;
+                for (int i = 0; i < nums.Length; i++)
+                {
+                    if (nums[i] % 2 == 0)
+                    {
+                        //even
+                        if (i != evenIndex)
+                        {
+                            int t = nums[evenIndex];
+                            nums[evenIndex] = nums[i];
+                            nums[i] = t;
+                        }
+                        evenIndex++;
+                    }
+                }
+                return nums;
+            }
+            public int HeightChecker(int[] heights)
+            {
+                int count = 0;
+                int[] tmpArray = new int[heights.Length];
+
+
+                for (int i = 0; i < tmpArray.Length; i++)
+                {
+                    tmpArray[i] = heights[i];
+                }
+
+                for (int i = 0; i < tmpArray.Length; i++)
+                {
+                    for (int j = i + 1; j < tmpArray.Length; j++)
+                    {
+                        if (tmpArray[i] > tmpArray[j])
+                        {
+                            int t = tmpArray[i];
+                            tmpArray[i] = tmpArray[j];
+                            tmpArray[j] = t;
+                        }
+                    }
+                }
+
+                for (int i = 0; i < tmpArray.Length; i++)
+                {
+                    if (tmpArray[i] != heights[i]) count++;
+                }
+
+                return count;
+            }
+            public int ThirdMax(int[] nums)
+            {
+                int Max_count = 0;
+
+                long[] Max_3 = new long[3] { long.MinValue, long.MinValue, long.MinValue };
+                for (int i = 0; i < nums.Length; i++)
+                {
+                    for(int j = 0; j < Max_3.Length; j++)
+                    {
+                        if (nums[i] > Max_3[j])
+                        {
+                            for (int k = Max_3.Length - 1; k > j; k--)
+                            {
+                                Max_3[k] = Max_3[k - 1];
+                            }
+                            Max_3[j] = nums[i];
+                            Max_count++;
+                            break;
+                        }
+                        else if (nums[i] == Max_3[j]) break;
+                    }
+                }
+                if (Max_count < 3)
+                {
+                    return (int) Max_3[0];
+                }
+                return (int)Max_3[2];
+            }
+            public IList<int> FindDisappearedNumbers(int[] nums)
+            {
+
             }
             private class 陣列數字一樣丟後面 : IComparer<int>
             {
